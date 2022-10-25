@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(143, 240, 214, 0.582);
+}
+hr{
+    margin: 0;
+}
+.imagencita img{
+    width: 2rem;
+    margin: 0.3rem;
+}
+
+.btn:hover{
+    background-color: aqua;
+}
+.carousel-inner{
+    width: 100vw;
+    height: 30rem;
+}
+.positionSticky{
+    width: 100%;
+    min-height: 10vh;
+    background-color: rgb(94,220,189);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+.imgCarousel img{
+ object-fit: cover;    
+}
+
+.tituloTienda{ 
+   background-color: rgb(94,220,189);
+   font-family: 'Roboto', sans-serif;
+   font-family: 'Square Peg', cursive;
+   font-family: 'Water Brush', cursive;
+   font-size: 5rem;
+}
+.carousel{
+    display: flex;
+    justify-content: center;
+    height: 30rem;
+}
+
+.francoTitulo{
+    font-family: 'Edu QLD Beginner', cursive;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Square Peg', cursive;
+    font-family: 'Water Brush', cursive;
+}
+
+.imgLogo{
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    margin: 0.5rem;
+}
+.contacto-img{
+    width: 2rem;
+    margin-right: 1rem;
+}
+.conteinerLogo{
+background-color:  rgb(94,220,189);
+width: 40%;
+margin-left: 1rem;
+}
+
+.quienesSomos{
+    margin: 0.5rem;
+    height: 30rem;
+}
+.divUbicacion{ 
+    margin: 0.5rem;  
+    padding: 5rem;
+}
+.googleMaps{
+    margin-left: 10rem;
+    height: 30rem;
+    background-color:rgb(94,220,189);
+    border-radius: 50%; 
+    margin-bottom: 1rem;
+}
+
+.productos{
+    width: 85%;
+    color:rgb(17, 139, 109);
+    background-color:rgb(225, 247, 241); 
+    box-shadow: 5px 5px 15px 0 rgba(94, 220, 189, 0.538);
+}
+
+.botonAgregar{
+    background-color:rgba(94, 220, 189, 0.804);
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 15px 0 rgba(191, 77, 1, 0.538);
+    border: 1rem;
+    padding: 0.2rem;
+}
+.botonAgregar:hover{
+    box-shadow: 10px 10px 10px 0 #dc3a04af;
+    transition: 0.5s;
+    background-color: aqua;
+}
+.precio{
+    margin: 0;
+}
+
+.cuerpo-carta{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.carrito-cantidad{
+    background-color: aliceblue;
+    padding: .25rem;
+    width: 1.5rem;
+    color: black;
+    border-radius: 50%;
+}
+.cuerpo-carta_titulo{
+    justify-self: flex-start;
+}
+.carritoDeCompras{
+    width: 10rem;
+}
+.carritoDeCompras-img{
+    width: 2rem;
+}
+.aside{
+     position: sticky;
+     top: 0;
+}
+footer{
+    background-color:rgb(94,220,189);
+}

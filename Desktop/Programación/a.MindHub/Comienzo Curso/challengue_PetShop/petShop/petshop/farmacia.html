@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop || Farmacia</title>
+    <link rel="shortcut icon" href="./assets/img/dog.ico" type="image/x-icon">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&family=Square+Peg&family=Water+Brush&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&family=Square+Peg&family=Water+Brush&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body>
+    <div id="app">
+
+        <header class="positionSticky">
+            <nav class="sticky-lg-top d-flex align-items-center navbar navbar-expand-lg container">
+                <div>
+                    <a class="navbar-brand m-2" href="#">
+                        <img src="./assets/img/dog.ico" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb KAlRDb"
+                            alt="Champion Logo and symbol, meaning, history, PNG, brand" data-noaft="1"
+                            style="height: 70px; margin: 0px; border-radius: 1rem ; box-shadow: -2px 2px 2px 2px;">
+                    </a>            
+                </div>
+               
+                <div class="container-fluid d-flex align-items-center">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link p-3 active fuente text-uppercase fw-bolder" href="./index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active  p-3 fuente text-uppercase fw-bolder" href="#">Farmacia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active p-3  fuente text-uppercase fw-bolder" href="./juguetes.html">Juguetes</a>
+                            </li>
+                        </ul>
+                <div>
+                    <h1 class="francoTitulo">Franco</h1>
+                </div>
+                        <form class="d-flex" role="search">
+                                <a href="./contacto.html"><img class="radio" src="./assets/img/contact.png" height="30px" alt="United States"></a>
+                            <button class="btn">
+                                <img src="./assets/img/shoppingcart.png" height="30px" alt="bag">
+                            </button>
+                            <input class="form-control borde" type="search" placeholder="Search" aria-label="Search" v-model="input">{{filterSerch}}
+                        </form>
+                    </div>
+                    
+                </div>
+            </nav>
+        </header>
+
+        <main class="container">
+            <div>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img src="./assets/img/shoppingcart.png" class="carritoDeCompras" height="30px" alt="bag">({{cantidadDeProductos}})
+                </button>
+            </div>
+            
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div v-for="producto in carrito">
+                                <div class="card mb-3" style="max-width: 540px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img :src="producto.imagen" class="img-fluid rounded-start"
+                                                :alt="producto.nombre">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{producto.nombre}}</h5>
+                                                <p class="card-text">cantidad: {{producto.cantidad}}</p>
+                                                <p class="card-text">c/u ${{producto.precio}}</p>
+                                                <button @click="eliminarProducto(producto)">Eliminar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Total a pagar: {{totalAPagar}}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Pagar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <select name="Filtro" id="precios">
+                <option value="Filtro">
+                    Filtro
+                </option>
+                <option @click="orderPrecioBajo" value="precioMasBajo">
+                    Precio Mas Bajo
+                </option>
+                <option value="precioMasAlto">
+                    Precio Mas Alto
+                </option>
+            </select> -->
+            <label class="m-2" for="bajo">precio mas bajo</label>
+            <input @click="orderPrecioBajo" type="checkbox" name="precio mas bajo" id="bajo">
+            <label class="m-2" for="alto">precio mas alto</label>
+            <input @click="orderPrecioAlto" type="checkbox" name="precio mas alto" id="alto">
+
+            <div v-for="producto in productosFiltrados">
+                <div v-if="producto.tipo == 'Medicamento'">
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="productos card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img :src="producto.imagen" class="img-fluid rounded-start" :alt="producto.nombre">
+                                </div>
+                                <div class="col-md-8 ">
+                                    <div class="card-body cuerpo-carta">
+                                        <h5 class="text-center card-title cuerpo-carta_titulo">{{producto.nombre}}</h5>
+                                        <p class="card-text text-center mt-4">{{producto.descripcion}}</p>
+                                        <div class="d-flex productos-precio">
+                                            <p class="text-center precio col">Precio : ${{producto.precio}}</p>
+                                            <p class="m-1" v-if="producto.stock < 5">ultimas unidades</p>
+                                            <button class="botonAgregar col" @click="carritoCompras(producto)">Agregar
+                                                al
+                                                carrito</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <footer class="pt-5 pb-3 ">
+        <div class="container">
+            <div class="row">
+                <div class="col order-5 m">
+                    <h5>Suscríbete a Nuestro Newsletter</h5>
+                    <hr>
+                    <ul>
+                        <li class="pb-3 m-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Ingresa tu E-mail "
+                                    aria-label="Recipient's username with two button addons">
+                                <button class="btn btn-outline-secondary" type="button" style="border-left:none;"><img
+                                        src="./assets/img/email-logo-png-1125.png" alt=""></button>
+                            </div>
+                        </li>
+                        <li class="pb-2 pt-2 m-4">
+                            <p> Inscribete para recibir noticias!</p>
+                        </li>
+                    </ul>
+                    <div class="col m-5">
+                        <div>
+                            <button type="button" class="btn btn-outline-light m-3"><img
+                                    src="./assets/img/dog_animal_icon_123538.png" class="pay img-fluid"
+                                    alt="ol"></button>
+                            <button type="button" class="btn btn-outline-light"><img
+                                    src="./assets/img/black_cat_icon_177458.png" class=" pay img-fluid" alt="ol1">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col order-1 d-flex flex-column align-content-between ">
+                    <h5>Nuestras Redes</h5>
+                    <hr>
+                    <div class="imagencita m-3">
+                        <a href="https://www.facebook.com/"><img src="./assets/img/facebook.png" alt="logofacebook"></a>
+                        <a href="https://www.instagram.com/"><img src="./assets/img/instagram.png"
+                                alt="logoinstagram"></a>
+                        <a href="https://wa.link/d73goe"><img src="./assets/img/whatsapp.png" alt="logowsp"></a>
+                    </div>
+                    <div class="col m-3">
+                        <a href="#"><img src="./assets/img/dog.ico" class=" logo img-fluid w-25" alt="logo"></a>
+                    </div>
+                    <div class="col m-3">
+                        <ul>
+                            <li>&copy; 2022 Pet Shop.</li>
+                            <li>Todos los derechos reservados. <span><a href="#">INICIO.</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col order-1">
+                    <h5>Dirección</h5>
+                    <hr>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.686925037962!2d-58.4303837!3d-34.6120774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405CCB%20CABA!5e0!3m2!1ses!2sar!4v1657312308407!5m2!1ses!2sar"
+                        width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+            </div>
+
+
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

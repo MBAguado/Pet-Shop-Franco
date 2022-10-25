@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\..\\Primeras 2 semanas\\Tarea4\\tarea4conMediaQueries"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "petshop"
+	}
+}
